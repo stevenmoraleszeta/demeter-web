@@ -1,0 +1,13 @@
+/* Pie de página */
+.app-footer {
+    background-color: var(--dark-green);
+    padding: 20px;
+    text-align: center;
+}
+
+.app-footer {
+    margin: 0;
+    font-size: 14px;
+    color: var(--light-green);
+    font-weight: bold;
+}

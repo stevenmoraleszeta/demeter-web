@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../App.css';
-import './DemeterDemo.css';
+import './DemeterMap.css';
 import fincaImagenArriba from '../../Assets/Img/fincaImagenArriba.png';
 import Modal from 'react-modal';
 
@@ -12,7 +12,9 @@ function DemeterDemo() {
 
     const zones = [
         {
-            name: 'Zona 1', gridArea: '1 / 1 / 2 / 2', data: {
+            name: 'Zona 1',
+            gridArea: '1 / 1 / 2 / 2',
+            data: {
                 title: 'Zona 1',
                 indicators: [
                     'Tipo de plantación: Tomates',
@@ -22,12 +24,12 @@ function DemeterDemo() {
                     'Temperatura ideal: 18-22°C',
                     'Humedad: 65%',
                     'Humedad ideal: 60-70%',
-                    'Nitrogeno: Normal',
-                    'Nitrogeno ideal: 80-100 ppm',
-                    'Fosforo: Bajo',
-                    'Fosforo ideal: 30-50 ppm',
-                    'Potacio: Normal',
-                    'Potacio ideal: 150-200 ppm',
+                    'Nitrógeno: 90 ppm',
+                    'Nitrógeno ideal: 80-100 ppm',
+                    'Fósforo: 35 ppm',
+                    'Fósforo ideal: 30-50 ppm',
+                    'Potasio: 160 ppm',
+                    'Potasio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Ninguna',
                     'Sospecha de plaga: Ninguna'
                 ],
@@ -37,7 +39,9 @@ function DemeterDemo() {
             }
         },
         {
-            name: 'Zona 2', gridArea: '1 / 2 / 2 / 3', data: {
+            name: 'Zona 2',
+            gridArea: '1 / 2 / 2 / 3',
+            data: {
                 title: 'Zona 2',
                 indicators: [
                     'Tipo de plantación: Lechugas',
@@ -47,12 +51,12 @@ function DemeterDemo() {
                     'Temperatura ideal: 18-22°C',
                     'Humedad: 70%',
                     'Humedad ideal: 60-70%',
-                    'Nitrogeno: Bajo',
-                    'Nitrogeno ideal: 80-100 ppm',
-                    'Fosforo: Normal',
-                    'Fosforo ideal: 30-50 ppm',
-                    'Potacio: Bajo',
-                    'Potacio ideal: 150-200 ppm',
+                    'Nitrógeno: 70 ppm',
+                    'Nitrógeno ideal: 80-100 ppm',
+                    'Fósforo: 40 ppm',
+                    'Fósforo ideal: 30-50 ppm',
+                    'Potasio: 100 ppm',
+                    'Potasio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Leve',
                     'Sospecha de plaga: Alta'
                 ],
@@ -64,7 +68,9 @@ function DemeterDemo() {
             }
         },
         {
-            name: 'Zona 3', gridArea: '1 / 3 / 2 / 4', data: {
+            name: 'Zona 3',
+            gridArea: '1 / 3 / 2 / 4',
+            data: {
                 title: 'Zona 3',
                 indicators: [
                     'Tipo de plantación: Pimientos',
@@ -74,12 +80,12 @@ function DemeterDemo() {
                     'Temperatura ideal: 20-25°C',
                     'Humedad: 60%',
                     'Humedad ideal: 60-70%',
-                    'Nitrogeno: Normal',
-                    'Nitrogeno ideal: 80-100 ppm',
-                    'Fosforo: Normal',
-                    'Fosforo ideal: 30-50 ppm',
-                    'Potacio: Alto',
-                    'Potacio ideal: 150-200 ppm',
+                    'Nitrógeno: 85 ppm',
+                    'Nitrógeno ideal: 80-100 ppm',
+                    'Fósforo: 35 ppm',
+                    'Fósforo ideal: 30-50 ppm',
+                    'Potasio: 180 ppm',
+                    'Potasio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Ninguna',
                     'Sospecha de plaga: Leve'
                 ],
@@ -90,7 +96,9 @@ function DemeterDemo() {
             }
         },
         {
-            name: 'Zona 4', gridArea: '1 / 4 / 2 / 5', data: {
+            name: 'Zona 4',
+            gridArea: '1 / 4 / 2 / 5',
+            data: {
                 title: 'Zona 4',
                 indicators: [
                     'Tipo de plantación: Zanahorias',
@@ -100,12 +108,12 @@ function DemeterDemo() {
                     'Temperatura ideal: 22-27°C',
                     'Humedad: 55%',
                     'Humedad ideal: 60-70%',
-                    'Nitrogeno: Alto',
-                    'Nitrogeno ideal: 80-100 ppm',
-                    'Fosforo: Normal',
-                    'Fosforo ideal: 30-50 ppm',
-                    'Potacio: Bajo',
-                    'Potacio ideal: 150-200 ppm',
+                    'Nitrógeno: 100 ppm',
+                    'Nitrógeno ideal: 80-100 ppm',
+                    'Fósforo: 40 ppm',
+                    'Fósforo ideal: 30-50 ppm',
+                    'Potasio: 120 ppm',
+                    'Potasio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Alta',
                     'Sospecha de plaga: Ninguna'
                 ],
@@ -117,7 +125,9 @@ function DemeterDemo() {
             }
         },
         {
-            name: 'Zona 5', gridArea: '2 / 1 / 3 / 2', data: {
+            name: 'Zona 5',
+            gridArea: '2 / 1 / 3 / 2',
+            data: {
                 title: 'Zona 5',
                 indicators: [
                     'Tipo de plantación: Cebollas',
@@ -127,12 +137,12 @@ function DemeterDemo() {
                     'Temperatura ideal: 15-20°C',
                     'Humedad: 75%',
                     'Humedad ideal: 60-70%',
-                    'Nitrogeno: Bajo',
-                    'Nitrogeno ideal: 80-100 ppm',
-                    'Fosforo: Bajo',
-                    'Fosforo ideal: 30-50 ppm',
-                    'Potacio: Normal',
-                    'Potacio ideal: 150-200 ppm',
+                    'Nitrógeno: 60 ppm',
+                    'Nitrógeno ideal: 80-100 ppm',
+                    'Fósforo: 25 ppm',
+                    'Fósforo ideal: 30-50 ppm',
+                    'Potasio: 140 ppm',
+                    'Potasio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Ninguna',
                     'Sospecha de plaga: Moderada'
                 ],
@@ -143,7 +153,9 @@ function DemeterDemo() {
             }
         },
         {
-            name: 'Zona 6', gridArea: '2 / 2 / 3 / 3', data: {
+            name: 'Zona 6',
+            gridArea: '2 / 2 / 3 / 3',
+            data: {
                 title: 'Zona 6',
                 indicators: [
                     'Tipo de plantación: Calabacines',
@@ -153,12 +165,12 @@ function DemeterDemo() {
                     'Temperatura ideal: 20-25°C',
                     'Humedad: 68%',
                     'Humedad ideal: 60-70%',
-                    'Nitrogeno: Normal',
-                    'Nitrogeno ideal: 80-100 ppm',
-                    'Fosforo: Bajo',
-                    'Fosforo ideal: 30-50 ppm',
-                    'Potacio: Normal',
-                    'Potacio ideal: 150-200 ppm',
+                    'Nitrógeno: 90 ppm',
+                    'Nitrógeno ideal: 80-100 ppm',
+                    'Fósforo: 20 ppm',
+                    'Fósforo ideal: 30-50 ppm',
+                    'Potasio: 160 ppm',
+                    'Potasio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Leve',
                     'Sospecha de plaga: Ninguna'
                 ],
@@ -169,7 +181,9 @@ function DemeterDemo() {
             }
         },
         {
-            name: 'Zona 7', gridArea: '2 / 3 / 3 / 4', data: {
+            name: 'Zona 7',
+            gridArea: '2 / 3 / 3 / 4',
+            data: {
                 title: 'Zona 7',
                 indicators: [
                     'Tipo de plantación: Espinacas',
@@ -179,51 +193,51 @@ function DemeterDemo() {
                     'Temperatura ideal: 20-25°C',
                     'Humedad: 62%',
                     'Humedad ideal: 60-70%',
-                    'Nitrogeno: Normal',
-                    'Nitrogeno ideal: 80-100 ppm',
-                    'Fosforo: Normal',
-                    'Fosforo ideal: 30-50 ppm',
-                    'Potacio: Bajo',
-                    'Potacio ideal: 150-200 ppm',
+                    'Nitrógeno: 85 ppm',
+                    'Nitrógeno ideal: 80-100 ppm',
+                    'Fósforo: 30 ppm',
+                    'Fósforo ideal: 30-50 ppm',
+                    'Potasio: 110 ppm',
+                    'Potasio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Moderada',
                     'Sospecha de plaga: Baja'
                 ],
                 recommendations: [
                     'Aplicar fertilizante rico en potasio.',
-                    'Revisar y tratar las enfermedades moderadas.',
-                    'Implementar medidas de control de plagas leves.'
+                    'Revisar y tratar las enfermedades moderadas.'
                 ]
             }
         },
         {
-            name: 'Zona 8', gridArea: '2 / 4 / 3 / 5', data: {
+            name: 'Zona 8',
+            gridArea: '2 / 4 / 3 / 5',
+            data: {
                 title: 'Zona 8',
                 indicators: [
-                    'Tipo de plantación: Judías verdes',
+                    'Tipo de plantación: Brócoli',
                     'Última fecha y hora de monitoreo: 02-08-2024 01:00 PM',
                     'Última fecha y hora de riego: 29-07-2024 07:00 PM',
-                    'Temperatura encontrada: 26°C',
-                    'Temperatura ideal: 22-27°C',
-                    'Humedad: 58%',
+                    'Temperatura encontrada: 22°C',
+                    'Temperatura ideal: 20-25°C',
+                    'Humedad: 65%',
                     'Humedad ideal: 60-70%',
-                    'Nitrogeno: Alto',
-                    'Nitrogeno ideal: 80-100 ppm',
-                    'Fosforo: Bajo',
-                    'Fosforo ideal: 30-50 ppm',
-                    'Potacio: Normal',
-                    'Potacio ideal: 150-200 ppm',
-                    'Sospecha de enfermedad: Alta',
-                    'Sospecha de plaga: Alta'
+                    'Nitrógeno: 95 ppm',
+                    'Nitrógeno ideal: 80-100 ppm',
+                    'Fósforo: 40 ppm',
+                    'Fósforo ideal: 30-50 ppm',
+                    'Potasio: 150 ppm',
+                    'Potasio ideal: 150-200 ppm',
+                    'Sospecha de enfermedad: Ninguna',
+                    'Sospecha de plaga: Baja'
                 ],
                 recommendations: [
-                    'Reducir la aplicación de fertilizantes ricos en nitrógeno.',
-                    'Aplicar fertilizante rico en fósforo.',
-                    'Revisar y tratar las enfermedades.',
-                    'Implementar medidas de control de plagas.'
+                    'Mantener los niveles de fertilización en equilibrio.',
+                    'Vigilar y controlar la plaga baja.'
                 ]
             }
         }
     ];
+    
 
     const determineZoneState = (indicators) => {
         const temp = parseInt(indicators.find(ind => ind.includes('Temperatura encontrada')).split(': ')[1]);

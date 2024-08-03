@@ -1,0 +1,45 @@
+/* DemeterMenu.css */
+.demeter-menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 4 columnas de igual tamaño */
+    grid-template-rows: repeat(auto-fit, 230px); /* Tamaño mínimo de 200px por fila, ajusta automáticamente */
+    gap: 15px; /* Espacio entre botones */
+    row-gap: 5px; /* Espacio entre filas de botones */
+    padding: 7vh;
+    border-radius: 8px;
+    height: 100vh;
+}
+
+.menu-button {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna para que el ícono esté sobre el texto */
+    background-color: var(--primary-color); 
+    color: var(--light-color);
+    border: none;
+    border-radius: 8px; 
+    padding: 10px; /* Espaciado interno */
+    margin: 0; 
+    cursor: pointer;
+    width: 100%;
+    height: 100%; /* Asegura que el botón ocupe toda la altura disponible */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total del botón */
+}
+
+.menu-button:hover {
+    background-color: var(--dark-green); 
+    color: var(--light-green);
+}
+
+.menu-icon {
+    font-size: 48px; /* Tamaño del icono */
+    margin-bottom: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.menu-text {
+    margin-top: 8px; /* Espacio entre el ícono y el texto, en caso de que sea necesario */
+}

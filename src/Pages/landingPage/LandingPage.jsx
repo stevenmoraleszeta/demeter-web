@@ -17,19 +17,19 @@ function LandingPage() {
 
             <section className="devices-container">
                 <div className="device">
-                    <h2>Dispositivo Hormiga</h2>
+                    <h2>Dispositivo Sensor</h2>
                     <p>Recolección de datos (humedad, temperatura, nutrientes, enfermedades, plagas).</p>
                 </div>
-                <div className="device">
+                <div className="device demeter-system">
                     <h2>Sistema de Administración</h2>
                     <p>Visualización y análisis de datos.</p>
-                    <p>Manejo de cultivos, inventarios, zonas, fechas, tareas, entre otros.</p>
+                    <p>Manejo de cultivos, inventario, inteligencia artificial, zonas, personal, tareas, entre otros.</p>
                 </div>
             </section>
             <section className="demo-access">
                 <h1>Prueba el Simulador del Sistema Demeter</h1>
                 <p className="demo-access-description">El prototipo está diseñado para ilustrar cómo funcionaría el prototipo en una finca real, brindando una visión clara y práctica de su impacto y operación en un entorno agrícola auténtico.</p>
-                <a href="/demeter-demo" className="demo-button" target="_blank" rel="noopener noreferrer">Acceder al Prototipo</a>
+                <a href="/demeter" className="demo-button" target="_blank" rel="noopener noreferrer">Acceder al Prototipo</a>
             </section>
             <section className="video-demo">
                 <h2>Mi Proyecto en Dos Minutos</h2>
@@ -43,6 +43,10 @@ function LandingPage() {
                         allowFullScreen
                     ></iframe>
                 </div>
+            </section>
+            <section className="how'defense">
+                <h1 className="demeter-info-description">¿Cómo lo pienso lograr?</h1>
+                <p>Modelo Canva</p>
             </section>
         </>
     );

@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: center;
     background-color: var(--dark-green);
-    padding: 12px 0px;
     color: var(--light-color);
     position: fixed;
     top: 0; 
@@ -11,6 +10,7 @@
     width: 100%;
     z-index: 1000;
     opacity: 95%;
+    height: 5vh;
     font-weight: 500;
 }
 

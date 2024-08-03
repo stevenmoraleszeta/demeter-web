@@ -5,12 +5,16 @@
     padding: 8rem 0;
     justify-content: center;
     align-items: center;
-    object-fit: cover;
     background-image: url("../../Assets/Img/header-image.png");
     background-color: var(--primary-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 50vh;
     position: relative;
-    /* Añadir para que el pseudo-elemento se posicione correctamente */
 }
+
 
 .page-header::before {
     content: '';
@@ -32,10 +36,11 @@
 }
 
 .header-title {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
-.header-button {
+.header-button,
+.demo-button {
     background-color: var(--secondary-color);
     color: var(--light-color);
     border: none;
@@ -46,8 +51,15 @@
     transition: background-color 0.3s;
 }
 
-.header-button:hover {
+.header-button:hover,
+.demo-button:hover {
     background-color: var(--dark-green);
+}
+
+.demeter-info-description {
+    margin-top: 10vh;
+    text-align: center;
+    max-width: 90vw;
 }
 
 /* Devices */
@@ -62,17 +74,14 @@
     background-image: url("../../Assets/Img/prototipo.png");
     background-color: var(--secondary-color);
     background-size: cover;
-    /* Ajusta la imagen al tamaño de la tarjeta */
     background-position: center;
-    /* Centra la imagen en la tarjeta */
     background-repeat: no-repeat;
-    /* Evita que la imagen se repita */
     border-radius: 30px;
     box-shadow: 0 4px 16px var(--dark-blue);
     padding: 1.5rem;
     width: 100%;
     height: 25rem;
-    max-width: 300px;
+    max-width: 1fr;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -81,7 +90,7 @@
 }
 
 .device:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .device h2 {
@@ -96,4 +105,56 @@
     font-weight: 500;
     margin: 0;
     color: var(--dark-blue);
+}
+
+/*Demo Section*/
+.demo-access {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../Assets/Img/agroTechBanner.png");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 30vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-access::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-blue);
+    z-index: 1;
+    opacity: 85%;
+}
+
+.demo-access>* {
+    position: relative;
+    z-index: 2;
+}
+
+.demo-access-description{
+    text-align: center !important;
+    font-weight: 400;
+    width: 60%;
+}
+
+
+/*Video Section*/
+.video-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-container {
+    width: 80%;
+    max-width: 1200px;
 }

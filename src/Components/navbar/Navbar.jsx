@@ -11,7 +11,7 @@ function Navbar() {
                     <Link to="/">Demeter</Link>
                 </li>
                 <li>
-                    <Link to="/demeter-demo">Demo Web</Link>
+                    <Link to="/demeter-demo" target="_blank" rel="noopener noreferrer">Demo Web</Link>
                 </li>
             </ul>
         </nav>

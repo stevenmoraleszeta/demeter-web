@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import '../../App.css';
 import './DemeterDemo.css';
-import fincaImagenArriba from '../../Assets/Img/fincaImagenArriba.png'; // Importa la imagen
+import fincaImagenArriba from '../../Assets/Img/fincaImagenArriba.png';
+import Modal from 'react-modal';
 
 function DemeterDemo() {
     const [activeZone, setActiveZone] = useState(null);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [sensorModalIsOpen, setSensorModalIsOpen] = useState(false);
+    const [sensorBatteryLevel] = useState('75%'); // Nivel de batería del sensor
 
     const zones = [
         {
@@ -26,6 +30,9 @@ function DemeterDemo() {
                     'Potacio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Ninguna',
                     'Sospecha de plaga: Ninguna'
+                ],
+                recommendations: [
+                    'Aplicar fertilizante rico en fósforo para corregir la deficiencia.'
                 ]
             }
         },
@@ -48,6 +55,11 @@ function DemeterDemo() {
                     'Potacio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Leve',
                     'Sospecha de plaga: Alta'
+                ],
+                recommendations: [
+                    'Aplicar fertilizante rico en nitrógeno y potasio.',
+                    'Implementar medidas de control de plagas.',
+                    'Revisar plantas enfermas.'
                 ]
             }
         },
@@ -70,6 +82,10 @@ function DemeterDemo() {
                     'Potacio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Ninguna',
                     'Sospecha de plaga: Leve'
+                ],
+                recommendations: [
+                    'Reducir la aplicación de fertilizantes ricos en potasio.',
+                    'Vigilar y controlar la plaga.'
                 ]
             }
         },
@@ -92,6 +108,11 @@ function DemeterDemo() {
                     'Potacio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Alta',
                     'Sospecha de plaga: Ninguna'
+                ],
+                recommendations: [
+                    'Reducir la aplicación de fertilizantes ricos en nitrógeno.',
+                    'Aumentar la aplicación de fertilizantes ricos en potasio.',
+                    'Revisar y tratar las enfermedades.'
                 ]
             }
         },
@@ -114,6 +135,10 @@ function DemeterDemo() {
                     'Potacio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Ninguna',
                     'Sospecha de plaga: Moderada'
+                ],
+                recommendations: [
+                    'Aplicar fertilizantes ricos en nitrógeno y fósforo.',
+                    'Implementar medidas de control de plagas.'
                 ]
             }
         },
@@ -136,6 +161,10 @@ function DemeterDemo() {
                     'Potacio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Leve',
                     'Sospecha de plaga: Ninguna'
+                ],
+                recommendations: [
+                    'Aplicar fertilizante rico en fósforo.',
+                    'Vigilar y tratar las enfermedades leves.'
                 ]
             }
         },
@@ -158,6 +187,11 @@ function DemeterDemo() {
                     'Potacio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Moderada',
                     'Sospecha de plaga: Baja'
+                ],
+                recommendations: [
+                    'Aplicar fertilizante rico en potasio.',
+                    'Revisar y tratar las enfermedades moderadas.',
+                    'Implementar medidas de control de plagas leves.'
                 ]
             }
         },
@@ -178,14 +212,18 @@ function DemeterDemo() {
                     'Fosforo ideal: 30-50 ppm',
                     'Potacio: Normal',
                     'Potacio ideal: 150-200 ppm',
-                    'Sospecha de enfermedad: Ninguna',
-                    'Sospecha de plaga: Moderada'
+                    'Sospecha de enfermedad: Alta',
+                    'Sospecha de plaga: Alta'
+                ],
+                recommendations: [
+                    'Reducir la aplicación de fertilizantes ricos en nitrógeno.',
+                    'Aplicar fertilizante rico en fósforo.',
+                    'Revisar y tratar las enfermedades.',
+                    'Implementar medidas de control de plagas.'
                 ]
             }
         }
     ];
-    
-    
 
     const determineZoneState = (indicators) => {
         const temp = parseInt(indicators.find(ind => ind.includes('Temperatura encontrada')).split(': ')[1]);
@@ -224,6 +262,19 @@ function DemeterDemo() {
         setActiveZone(data ? { ...data.data, state: determineZoneState(data.data.indicators) } : null);
     };
 
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalIsOpen(false);
+        setSensorModalIsOpen(false);
+    };
+
+    const openSensorModal = () => {
+        setSensorModalIsOpen(true);
+    };
+
     return (
         <div className="demo-container">
             <div className="grid-container" onMouseMove={handleMouseMove}>
@@ -241,11 +292,32 @@ function DemeterDemo() {
                         {zone.name}
                     </div>
                 ))}
+                <div
+                    className="sensor"
+                    style={{ top: '20%', left: '30%' }} 
+                    onClick={openSensorModal}
+                >
+                    Sensor
+                </div>
+                <div
+                    className="sensor"
+                    style={{ top: '78%', left: '78%' }} 
+                    onClick={openSensorModal}
+                >
+                    Sensor
+                </div>
+                <div
+                    className="sensor"
+                    style={{ top: '80%', left: '20%' }} 
+                    onClick={openSensorModal}
+                >
+                    Sensor
+                </div>
             </div>
             <div className="zone-data-section">
                 {activeZone ? (
                     <div className="zone-data">
-                        <h1>{activeZone.title}</h1>
+                        <h2>{activeZone.title}</h2>
                         <ul>
                             {activeZone.indicators.map((item, index) => (
                                 <ul key={index} className='indicador-container'>
@@ -259,7 +331,57 @@ function DemeterDemo() {
                 ) : (
                     <p>Posicione el cursor sobre una zona</p>
                 )}
+                <button className='action-button' onClick={openModal}>Ver Recomendaciones</button>
+                <button
+                    className='action-button'
+                    onClick={() => {
+                        alert("Se está regando la zona. Coloque un sensor en esta zona si quiere actualizar los indicadores.");
+                    }}
+                >
+                    Regar Zona
+                </button>
+                <button
+                    className='action-button'
+                    onClick={() => {
+                        alert("Funcion aún no implementada.");
+                    }}
+                >
+                    Ver datos estadísticos
+                </button>
             </div>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Recomendaciones"
+                className="modal"
+                overlayClassName="modal-overlay"
+            >
+                <h2>Recomendaciones</h2>
+                {activeZone ? (
+                    <div className="modal-content">
+                        <h3>{activeZone.title}</h3>
+                        {activeZone.recommendations.map((item, index) => (
+                            <p key={index}>{item}</p>
+                        ))}
+                    </div>
+                ) : (
+                    <p>No hay datos disponibles para mostrar.</p>
+                )}
+                <button onClick={closeModal} className='modal-close-button'>Cerrar</button>
+            </Modal>
+            <Modal
+                isOpen={sensorModalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Nivel de Batería del Sensor"
+                className="modal"
+                overlayClassName="modal-overlay"
+            >
+                <h2>Nivel de Batería del Sensor</h2>
+                <p>El nivel de batería del sensor es: {sensorBatteryLevel}</p>
+                <p>Coloque el sensor en un lugar soleado para completar la carga.</p>
+                <p>Recuerde desplazar el sensor si quiere actualizar los datos de una zona.</p>
+                <button onClick={closeModal} className='modal-close-button'>Cerrar</button>
+            </Modal>
         </div>
     );
 }

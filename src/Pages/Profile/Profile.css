@@ -1,0 +1,30 @@
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Cambiado a center para alinear verticalmente */
+    padding: 10vh 15vw;
+}
+
+.profile-image img {
+    width: 30vw;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.profile-info {
+    flex: 1;
+    width: 15vw ;
+}
+
+.roles{
+    color: var(--secondary-color);
+}
+
+.quote{
+    color: var(--light-green);
+    text-align: justify;
+    margin-top: 3vh;
+    font-size: 0.7rem;
+    width: 50%;
+    font-weight: 500;
+}

@@ -62,21 +62,29 @@
     overflow-y: auto;
 }
 
-.zone-data-section h2 {
+.zone-data-section h4 {
     margin: 0;
 }
 
 .indicador-container{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding: 0;
+}
+
+.zone-data p{
+    font-size: 0.5rem;
 }
 
 .zone-data ul{
     padding: 0;
 }
 
+.actions-container{
+    display: flex
+}
+
 .action-button{
-    font-size: 0.7rem;
+    font-size: 0.5rem;
     margin: 5px;
 }
 

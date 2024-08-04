@@ -1,0 +1,62 @@
+.demeter-page {
+    display: flex;
+    height: 100vh;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-align: center; /* Asegura que el texto dentro de los elementos se centre */
+}
+
+.demeterai-container {
+    padding: 20px;
+    max-width: 800px;
+    text-align: center; /* Centra el texto dentro del contenedor */
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+}
+
+.demeterai-title {
+    font-size: 1.5em;
+    color: var(--light-color);
+}
+
+.demeterai-subtitle{
+    font-size: 0.8em;
+    color: var(--light-green);
+    font-weight: 500;
+}
+
+.demeterai-select-container {
+    margin-bottom: 20px;
+}
+
+.demeterai-select {
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: var(--dark-green);
+    color: var(--light-color);
+}
+
+.demeterai-loading {
+    font-style: italic;
+    color: var(--light-color);
+}
+
+.demeterai-response {
+    margin-top: 20px;
+    text-align: center; /* Centra el texto dentro del contenedor de respuesta */
+}
+
+.demeterai-response-title {
+    font-size: 1.2em;
+    color: var(--light-color);
+}
+
+.demeterai-response-text {
+    font-size: 1em;
+    color: var(--light-color);
+    white-space: pre-wrap;
+    font-weight: 500;
+}

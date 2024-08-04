@@ -1,0 +1,36 @@
+.modelo-canvas {
+    color: var(--dark-green);
+    padding: 40px;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.modelo-canvas h1 {
+    color: var(--light-color);
+    text-align: center;
+}
+
+.modelo-canvas ul {
+    padding: 0;
+}
+
+.section {
+    background-color: var(--dark-green);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    color: var(--light-color);
+    display: flex;
+    align-items: flex-start;
+}
+
+.icon {
+    font-size: 35px; /* Tamaño del ícono más grande */
+    margin-right: 15px;
+    flex-shrink: 0; /* Evita que el ícono se reduzca */
+    color: var(--light-green);
+}
+
+.content {
+    flex: 1;
+}

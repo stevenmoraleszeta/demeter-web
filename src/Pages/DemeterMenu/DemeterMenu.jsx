@@ -1,59 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Modal from 'react-modal';
 import '../../App.css';
 import './DemeterMenu.css';
 import { FaMap, FaTasks, FaBoxes, FaUser, FaChalkboardTeacher, FaLeaf, FaBrain, FaCircle, FaBook } from 'react-icons/fa';
 
+// Configura el elemento raíz para el modal
+Modal.setAppElement('#root');
+
 function DemeterMenu() {
     const navigate = useNavigate();
+    const [showModal, setShowModal] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
 
-    const handleButtonClick = (path) => {
-        if(path == 'mapa'){
+    const handleButtonClick = (path, message) => {
+        if (path === 'mapa') {
             navigate(`/demeter/map`);
-        }else{
-            alert('Estas y otras funcionalidades se implementarán en un futuro. Prueba con el mapa de finca.')
+        }else if(path === 'ai'){
+            navigate(`/demeter/ai`);
+        } else {
+            setModalMessage(message);
+            setShowModal(true);
         }
     };
 
+    const closeModal = () => {
+        setShowModal(false);
+        setModalMessage('');
+    };
+
     return (
-        <div className="demeter-menu">
-            <div className="menu-button" onClick={() => handleButtonClick('mapa')}>
-                <FaMap className="menu-icon" />
-                <div className="menu-text">Mapa de Finca</div>
+        <>
+            <div className="demeter-menu">
+                <div className="menu-button" onClick={() => handleButtonClick('mapa')}>
+                    <FaMap className="menu-icon" />
+                    <div className="menu-text">Mapa de Finca</div>
+                </div>
+                <div className="menu-button" onClick={() => handleButtonClick('ai')}>
+                    <FaBrain className="menu-icon" />
+                    <div className="menu-text">Inteligencia artificial</div>
+                </div>
+                <div className="menu-button" onClick={() => handleButtonClick('', 'Esta funcionalidad te permitirá acceder a un tutorial del prototipo. Pruebe el Mapa de Finca o la Inteligencia Artificial.')}>
+                    <FaBook className="menu-icon" />
+                    <div className="menu-text">Tutorial Prototipo</div>
+                </div>
+                <div className="menu-button" onClick={() => handleButtonClick('tareas', 'Próximamente podrás gestionar las tareas de la finca desde aquí. Pruebe el Mapa de Finca o la Inteligencia Artificial.')}>
+                    <FaTasks className="menu-icon" />
+                    <div className="menu-text">Tareas</div>
+                </div>
+                <div className="menu-button" onClick={() => handleButtonClick('inventario', 'Gestiona el inventario de la finca de forma sencilla. Próximamente disponible. Pruebe el Mapa de Finca o la Inteligencia Artificial.')}>
+                    <FaBoxes className="menu-icon" />
+                    <div className="menu-text">Inventario</div>
+                </div>
+                <div className="menu-button" onClick={() => handleButtonClick('personal', 'Gestiona tu personal desde esta sección. Disponible próximamente. Pruebe el Mapa de Finca o la Inteligencia Artificial.')}>
+                    <FaUser className="menu-icon" />
+                    <div className="menu-text">Personal</div>
+                </div>
+                <div className="menu-button" onClick={() => handleButtonClick('capacitaciones', 'Proximamente se mostrarán capacitaciones en temas agrícolas y ecológicos en esta sección. Pruebe el Mapa de Finca o la Inteligencia Artificial.')}>
+                    <FaChalkboardTeacher className="menu-icon" />
+                    <div className="menu-text">Capacitaciones</div>
+                </div>
+                <div className="menu-button" onClick={() => handleButtonClick('recursos-ecologicos', 'Acá se podrá acceder a recursos ecológicos para tu finca, además de recetas y tutoriales para la creación de los mismos; como agroquímicos verdes. Pruebe el Mapa de Finca o la Inteligencia Artificial.')}>
+                    <FaLeaf className="menu-icon" />
+                    <div className="menu-text">Recursos Ecológicos</div>
+                </div>
+                <div className="menu-button" onClick={() => handleButtonClick('', 'Otras funcionalidades estarán disponibles próximamente. Pruebe el Mapa de Finca o la Inteligencia Artificial.')}>
+                    <FaCircle className="menu-icon" />
+                    <div className="menu-text">Otros</div>
+                </div>
+
+                <Modal
+                    isOpen={showModal}
+                    onRequestClose={closeModal}
+                    contentLabel="Información de funcionalidad"
+                    className="modal"
+                    overlayClassName="modal-overlay"
+                >
+                    <h2>Funcionalidad Próxima</h2>
+                    <p>{modalMessage}</p>
+                    <button onClick={closeModal}>Cerrar</button>
+                </Modal>
             </div>
-            <div className="menu-button" onClick={() => handleButtonClick('')}>
-                <FaBook className="menu-icon" />
-                <div className="menu-text">Tutorial Prototipo</div>
-            </div>
-            <div className="menu-button" onClick={() => handleButtonClick('tareas')}>
-                <FaTasks className="menu-icon" />
-                <div className="menu-text">Tareas</div>
-            </div>
-            <div className="menu-button" onClick={() => handleButtonClick('inventario')}>
-                <FaBoxes className="menu-icon" />
-                <div className="menu-text">Inventario</div>
-            </div>
-            <div className="menu-button" onClick={() => handleButtonClick('personal')}>
-                <FaUser className="menu-icon" />
-                <div className="menu-text">Personal</div>
-            </div>
-            <div className="menu-button" onClick={() => handleButtonClick('capacitaciones')}>
-                <FaChalkboardTeacher className="menu-icon" />
-                <div className="menu-text">Capacitaciones</div>
-            </div>
-            <div className="menu-button" onClick={() => handleButtonClick('recursos-ecologicos')}>
-                <FaLeaf className="menu-icon" />
-                <div className="menu-text">Recursos Ecológicos</div>
-            </div>
-            <div className="menu-button" onClick={() => handleButtonClick('inteligencia-artificial')}>
-                <FaBrain className="menu-icon" />
-                <div className="menu-text">Inteligencia artificial</div>
-            </div>
-            <div className="menu-button" onClick={() => handleButtonClick('')}>
-                <FaCircle className="menu-icon" />
-                <div className="menu-text">Otros</div>
-            </div>
-        </div>
+            </>
     );
 }
 

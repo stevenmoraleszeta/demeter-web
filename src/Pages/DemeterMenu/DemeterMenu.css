@@ -43,3 +43,29 @@
 .menu-text {
     margin-top: 8px; /* Espacio entre el ícono y el texto, en caso de que sea necesario */
 }
+
+/*Modal*/
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark-blue);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+.modal-overlay {
+    background-color: var(--dark-blue-low-opacity);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}

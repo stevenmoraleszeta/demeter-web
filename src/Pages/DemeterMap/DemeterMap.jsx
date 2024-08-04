@@ -25,11 +25,11 @@ function DemeterDemo() {
                     'Humedad: 65%',
                     'Humedad ideal: 60-70%',
                     'Nitrógeno: 90 ppm',
-                    'Nitrógeno ideal: 80-100 ppm',
+                    'Nitrógeno ideal: 100-150 ppm',
                     'Fósforo: 35 ppm',
-                    'Fósforo ideal: 30-50 ppm',
+                    'Fósforo ideal: 50-70 ppm',
                     'Potasio: 160 ppm',
-                    'Potasio ideal: 150-200 ppm',
+                    'Potasio ideal: 200-250 ppm',
                     'Sospecha de enfermedad: Ninguna',
                     'Sospecha de plaga: Ninguna'
                 ],
@@ -52,11 +52,11 @@ function DemeterDemo() {
                     'Humedad: 70%',
                     'Humedad ideal: 60-70%',
                     'Nitrógeno: 70 ppm',
-                    'Nitrógeno ideal: 80-100 ppm',
+                    'Nitrógeno ideal: 50-80 ppm',
                     'Fósforo: 40 ppm',
                     'Fósforo ideal: 30-50 ppm',
                     'Potasio: 100 ppm',
-                    'Potasio ideal: 150-200 ppm',
+                    'Potasio ideal: 100-150 ppm',
                     'Sospecha de enfermedad: Leve',
                     'Sospecha de plaga: Alta'
                 ],
@@ -81,9 +81,9 @@ function DemeterDemo() {
                     'Humedad: 60%',
                     'Humedad ideal: 60-70%',
                     'Nitrógeno: 85 ppm',
-                    'Nitrógeno ideal: 80-100 ppm',
+                    'Nitrógeno ideal: 90-120 ppm',
                     'Fósforo: 35 ppm',
-                    'Fósforo ideal: 30-50 ppm',
+                    'Fósforo ideal: 40-60 ppm',
                     'Potasio: 180 ppm',
                     'Potasio ideal: 150-200 ppm',
                     'Sospecha de enfermedad: Ninguna',
@@ -109,11 +109,11 @@ function DemeterDemo() {
                     'Humedad: 55%',
                     'Humedad ideal: 60-70%',
                     'Nitrógeno: 100 ppm',
-                    'Nitrógeno ideal: 80-100 ppm',
+                    'Nitrógeno ideal: 70-100 ppm',
                     'Fósforo: 40 ppm',
                     'Fósforo ideal: 30-50 ppm',
                     'Potasio: 120 ppm',
-                    'Potasio ideal: 150-200 ppm',
+                    'Potasio ideal: 130-180 ppm',
                     'Sospecha de enfermedad: Alta',
                     'Sospecha de plaga: Ninguna'
                 ],
@@ -138,11 +138,11 @@ function DemeterDemo() {
                     'Humedad: 75%',
                     'Humedad ideal: 60-70%',
                     'Nitrógeno: 60 ppm',
-                    'Nitrógeno ideal: 80-100 ppm',
+                    'Nitrógeno ideal: 60-90 ppm',
                     'Fósforo: 25 ppm',
-                    'Fósforo ideal: 30-50 ppm',
+                    'Fósforo ideal: 20-40 ppm',
                     'Potasio: 140 ppm',
-                    'Potasio ideal: 150-200 ppm',
+                    'Potasio ideal: 110-150 ppm',
                     'Sospecha de enfermedad: Ninguna',
                     'Sospecha de plaga: Moderada'
                 ],
@@ -166,11 +166,11 @@ function DemeterDemo() {
                     'Humedad: 68%',
                     'Humedad ideal: 60-70%',
                     'Nitrógeno: 90 ppm',
-                    'Nitrógeno ideal: 80-100 ppm',
+                    'Nitrógeno ideal: 80-110 ppm',
                     'Fósforo: 20 ppm',
-                    'Fósforo ideal: 30-50 ppm',
+                    'Fósforo ideal: 25-45 ppm',
                     'Potasio: 160 ppm',
-                    'Potasio ideal: 150-200 ppm',
+                    'Potasio ideal: 140-180 ppm',
                     'Sospecha de enfermedad: Leve',
                     'Sospecha de plaga: Ninguna'
                 ],
@@ -188,23 +188,23 @@ function DemeterDemo() {
                 indicators: [
                     'Tipo de plantación: Espinacas',
                     'Última fecha y hora de monitoreo: 02-08-2024 12:00 PM',
-                    'Última fecha y hora de riego: 30-07-2024 05:00 PM',
+                    'Última fecha y hora de riego: 30-07-2024 07:00 PM',
                     'Temperatura encontrada: 24°C',
-                    'Temperatura ideal: 20-25°C',
-                    'Humedad: 62%',
+                    'Temperatura ideal: 15-20°C',
+                    'Humedad: 70%',
                     'Humedad ideal: 60-70%',
-                    'Nitrógeno: 85 ppm',
-                    'Nitrógeno ideal: 80-100 ppm',
-                    'Fósforo: 30 ppm',
+                    'Nitrógeno: 65 ppm',
+                    'Nitrógeno ideal: 70-100 ppm',
+                    'Fósforo: 35 ppm',
                     'Fósforo ideal: 30-50 ppm',
-                    'Potasio: 110 ppm',
-                    'Potasio ideal: 150-200 ppm',
-                    'Sospecha de enfermedad: Moderada',
-                    'Sospecha de plaga: Baja'
+                    'Potasio: 115 ppm',
+                    'Potasio ideal: 120-160 ppm',
+                    'Sospecha de enfermedad: Ninguna',
+                    'Sospecha de plaga: Moderada'
                 ],
                 recommendations: [
-                    'Aplicar fertilizante rico en potasio.',
-                    'Revisar y tratar las enfermedades moderadas.'
+                    'Aplicar fertilizante rico en nitrógeno y potasio.',
+                    'Implementar medidas de control de plagas.'
                 ]
             }
         },
@@ -216,28 +216,27 @@ function DemeterDemo() {
                 indicators: [
                     'Tipo de plantación: Brócoli',
                     'Última fecha y hora de monitoreo: 02-08-2024 01:00 PM',
-                    'Última fecha y hora de riego: 29-07-2024 07:00 PM',
-                    'Temperatura encontrada: 22°C',
+                    'Última fecha y hora de riego: 29-07-2024 05:00 PM',
+                    'Temperatura encontrada: 26°C',
                     'Temperatura ideal: 20-25°C',
-                    'Humedad: 65%',
+                    'Humedad: 58%',
                     'Humedad ideal: 60-70%',
-                    'Nitrógeno: 95 ppm',
-                    'Nitrógeno ideal: 80-100 ppm',
-                    'Fósforo: 40 ppm',
+                    'Nitrógeno: 75 ppm',
+                    'Nitrógeno ideal: 80-110 ppm',
+                    'Fósforo: 35 ppm',
                     'Fósforo ideal: 30-50 ppm',
                     'Potasio: 150 ppm',
-                    'Potasio ideal: 150-200 ppm',
+                    'Potasio ideal: 130-170 ppm',
                     'Sospecha de enfermedad: Ninguna',
-                    'Sospecha de plaga: Baja'
+                    'Sospecha de plaga: Alta'
                 ],
                 recommendations: [
-                    'Mantener los niveles de fertilización en equilibrio.',
-                    'Vigilar y controlar la plaga baja.'
+                    'Aplicar fertilizante rico en nitrógeno.',
+                    'Implementar medidas de control de plagas intensivas.'
                 ]
             }
         }
     ];
-    
 
     const determineZoneState = (indicators) => {
         const temp = parseInt(indicators.find(ind => ind.includes('Temperatura encontrada')).split(': ')[1]);
@@ -331,7 +330,8 @@ function DemeterDemo() {
             <div className="zone-data-section">
                 {activeZone ? (
                     <div className="zone-data">
-                        <h2>{activeZone.title}</h2>
+                        <h4>{activeZone.title}</h4>
+                        <p>Los indices ideales se adaptan según el tipo de plantación.</p>
                         <ul>
                             {activeZone.indicators.map((item, index) => (
                                 <ul key={index} className='indicador-container'>
@@ -345,7 +345,8 @@ function DemeterDemo() {
                 ) : (
                     <p>Posicione el cursor sobre una zona</p>
                 )}
-                <button className='action-button' onClick={openModal}>Ver Recomendaciones</button>
+                <div className='actions-container'>
+                <button className='action-button' onClick={openModal}>Recomendaciones</button>
                 <button
                     className='action-button'
                     onClick={() => {
@@ -360,8 +361,9 @@ function DemeterDemo() {
                         alert("Funcion aún no implementada.");
                     }}
                 >
-                    Ver datos estadísticos
+                    Datos estadísticos
                 </button>
+                </div>
             </div>
             <Modal
                 isOpen={modalIsOpen}

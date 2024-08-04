@@ -89,14 +89,29 @@
     transition: transform 0.3s ease;
 }
 
-.demeter-system {
+.demeter-sensor {
+    position: relative;
+    background-image: url("../../Assets/Img/dispositivoSensor.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.demeter-system{
     position: relative;
     background-image: url("../../Assets/Img/demeterMap.png");
     background-position: right;
     background-size: cover;
 }
 
-.demeter-system::before {
+.demeter-ai{
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../../Assets/Img/demeterAI.png");
+}
+
+
+.device::before {
     content: "";
     position: absolute;
     top: 0;
@@ -180,3 +195,42 @@
     width: 80%;
     max-width: 1200px;
 }
+
+/*Modal*/
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark-green);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    font-weight: 500;
+}
+
+.modal-overlay {
+    background-color: var(--dark-blue-low-opacity);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.modal-image {
+    width: 40vh;
+    height: auto;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.modal-image:hover {
+    transform: scale(1.5);
+}
+

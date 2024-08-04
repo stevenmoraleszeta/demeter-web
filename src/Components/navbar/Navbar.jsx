@@ -8,10 +8,16 @@ function Navbar() {
         <nav className="navbar">
             <ul className="navbar-menu">
                 <li>
-                    <Link to="/">Demeter</Link>
+                    <Link to="/">Deméter</Link>
                 </li>
                 <li>
-                    <Link to="/demeter">Demo Demeter</Link>
+                    <Link to="/demeter">Prototipo Deméter</Link>
+                </li>
+                <li>
+                    <Link to="/canvas">Modelo Canvas</Link>
+                </li>
+                <li>
+                    <Link to="/profile">Quién soy</Link>
                 </li>
             </ul>
         </nav>

@@ -10,6 +10,7 @@ import CanvasModel from './Pages/CanvasModel/CanvasModel';
 import Profile from './Pages/Profile/Profile';
 
 function App() {
+  /*TODO Change icon an title*/
   return (
     <Router>
       <div className="App">

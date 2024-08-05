@@ -16,14 +16,15 @@
 }
 
 .demeterai-title {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: var(--light-color);
 }
 
 .demeterai-subtitle{
-    font-size: 0.8em;
+    font-size: 1rem;
     color: var(--light-green);
     font-weight: 500;
+    padding: 0 70px;
 }
 
 .demeterai-select-container {

@@ -59,13 +59,14 @@ function LandingPage() {
                     <iframe
                         width="100%"
                         height="500"
-                        src="https://www.youtube.com/embed/mrjzUFPloiY"
+                        src="https://www.youtube.com/embed/fqPYxWVQjyc"
                         title="Video Demo"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                     ></iframe>
                 </div>
             </section>
+
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
@@ -73,7 +74,7 @@ function LandingPage() {
                 className="modal"
                 overlayClassName="modal-overlay"
             >
-                <img className="modal-image" src={modalImage} alt="Descripción del Dispositivo"/>
+                <img className="modal-image" src={modalImage} alt="Descripción del Dispositivo" />
                 <p>{modalContent}</p>
                 <button onClick={closeModal}>Cerrar</button>
             </Modal>

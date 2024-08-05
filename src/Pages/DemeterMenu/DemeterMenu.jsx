@@ -16,8 +16,10 @@ function DemeterMenu() {
     const handleButtonClick = (path, message) => {
         if (path === 'mapa') {
             navigate(`/demeter/map`);
-        }else if(path === 'ai'){
+        } else if (path === 'ai') {
             navigate(`/demeter/ai`);
+        } else if (path === 'tutorial') {
+            window.open('https://youtu.be/QOyhXv3qfaI?si=eUaVVCOc5vqhWb7d', '_blank');
         } else {
             setModalMessage(message);
             setShowModal(true);
@@ -40,7 +42,7 @@ function DemeterMenu() {
                     <FaBrain className="menu-icon" />
                     <div className="menu-text">Inteligencia artificial</div>
                 </div>
-                <div className="menu-button" onClick={() => handleButtonClick('', 'Esta funcionalidad te permitirá acceder a un tutorial del prototipo. Pruebe el Mapa de Finca o la Inteligencia Artificial.')}>
+                <div className="menu-button" onClick={() => handleButtonClick('tutorial')}>
                     <FaBook className="menu-icon" />
                     <div className="menu-text">Tutorial Prototipo</div>
                 </div>
@@ -81,7 +83,7 @@ function DemeterMenu() {
                     <button onClick={closeModal}>Cerrar</button>
                 </Modal>
             </div>
-            </>
+        </>
     );
 }
 
